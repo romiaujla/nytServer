@@ -17,9 +17,38 @@ app.get('/', (_, res) => {
       .send(`App is running at port: ${port}`)
 })
 
-app.get('/book', (req, res) => {
+
+app.get('/books', (req, res) => {
     
-    // return the books to see if import is working
+    // getting search parameter and setting a defaul value
+    const {search = '', sort} = req.query;
+
+    // validating sort
+    if(sort){
+        if(!['title', 'rank'].includes(sort)){
+            return res  
+                .status(400)
+                .send(`Sort must be one of title or rank`);
+        }
+    }
+
+    // filtering the books based on the search results
+    let results = books
+        .filter((book) => {
+            return book
+                .title
+                .toLowerCase()
+                .includes(search.toLowerCase());
+        });
+
+    // sorts the books based on the input for what sort method is passed
+    if(sort){
+        results
+            .sort((a,b)=> {
+                return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
+            })
+    }
+    
     res
-      .json(books);
+      .json(results);
 })

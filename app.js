@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 
 const app = express();
-app.use(morgan('dev'));
+app.use(morgan('common'));
 const port = 8000;
 
 app.listen(port, () => {
@@ -11,4 +11,8 @@ app.listen(port, () => {
 
 app.get('/', (_, res) => {
     res.send(`App is running at port: ${port}`)
+})
+
+app.get('/book', (req, res) => {
+    res.send(`Reached Books`);
 })

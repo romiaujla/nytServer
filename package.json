@@ -1,0 +1,20 @@
+{
+  "name": "nytServer",
+  "version": "1.0.0",
+  "description": "Practising Full Stack Node Example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romiaujla/nytServer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romiaujla/nytServer/issues"
+  },
+  "homepage": "https://github.com/romiaujla/nytServer#readme"
+}

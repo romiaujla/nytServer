@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/romiaujla/nytServer/issues"
   },
-  "homepage": "https://github.com/romiaujla/nytServer#readme"
+  "homepage": "https://github.com/romiaujla/nytServer#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
